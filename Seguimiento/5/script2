@@ -1,0 +1,23 @@
+#!/bin/bash
+
+function main {
+	#install_epel_release
+ deploy_nginx
+ s
+}
+
+function install_epel_package {
+ sudo yum install epel_release -y
+}
+
+function deploy_nginx {
+ sudo yum install nginx -y
+ sudo systemctl start nginx
+ sudo systemctl enable nginx
+}
+
+function s {
+ echo "santiago" > /usr/share/nginx/html/index.html	
+}
+
+main
